@@ -1,0 +1,103 @@
+// VARIABLES
+$black: hsl(0, 0%, 4%)
+$font-stack: Lato, sans-serif
+$navbar-color: #f2efea
+$navbar-text-color: $black
+$primary: #60968D
+$section-padding: 3rem 1.5rem
+
+// GLOBAL
+body
+    font-family: $font-stack
+    background: $navbar-color
+
+.navbar.is-transparent
+    background-color: $navbar-color
+    text-transform: uppercase
+    font-weight: 700
+    // background: linear-gradient(135deg, #708090 22px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px),
+    // linear-gradient(225deg, #708090 22px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px)0 64px
+    // background-color:#708090
+    // background-size: 64px 128px
+
+
+.navbar-end
+    a
+        position: relative
+        color: $navbar-text-color
+        text-decoration: none
+        &:hover
+            color: $navbar-text-color
+        &:before
+            content: ""
+            position: absolute
+            width: 100%
+            height: 2px
+            bottom: 0
+            left: 0
+            background-color: $primary
+            visibility: hidden
+            -webkit-transform: scaleX(0)
+            transform: scaleX(0)
+            -webkit-transition: all 0.3s ease-in-out 0s
+            transition: all 0.3s ease-in-out 0s
+        &:hover:before
+            visibility: visible
+            -webkit-transform: scaleX(1)
+            transform: scaleX(1)
+
+.section.headline
+    background: $black
+    padding: $section-padding
+    h1
+        color: $navbar-color
+
+// HOME
+
+.hero.is-fullheight 
+    background: url("images/hero (2).png") no-repeat center
+    background-position-y: 55%
+.navbar-item.brand
+    // bottom: -20px
+    &:hover
+        -moz-transform: translate(-2px, -2px)
+        -ms-transform: translate(-2px, -2px)
+        -o-transform: translate(-2px, -2px)
+        -webkit-transform: translate(-2px, -2px)
+        transform: translate(-2px, -2px)
+
+// GALLERY
+section
+    padding: .5vw
+    font-size: 0
+    display: -ms-flexbox
+    -ms-flex-wrap: wrap
+    -ms-flex-direction: column
+    -webkit-flex-flow: row wrap
+    flex-flow: row wrap
+    display: -webkit-box
+    display: flex
+
+section div.gallery
+    -webkit-box-flex: auto
+    -ms-flex: auto
+    flex: auto
+    width: 200px
+    margin: .5vw
+
+section div.gallery img 
+    width: 100%
+    height: auto
+
+@media screen and (max-width: 400px)
+    section 
+        div.gallery 
+            margin: 0
+    section
+        padding: 0
+
+.grow:hover
+    -webkit-transform: scale(1.1)
+    -ms-transform: scale(1.1)
+    transform: scale(1.1)
+    cursor: pointer
